@@ -16,15 +16,13 @@ class Counters extends React.Component {
     constructor(props) {
         super(props)
         this.countID = 0;
-        var d = new Date();
         this.state = {
             CountsArray: [],
             id: "",
-            CreationDate: d.toLocaleString(),
         }
     }
 
-    AddCount = () => {
+    AddCounter = () => {
         this.countID = this.countID + 1;
         const CopyCountsArray = Object.assign([], this.state.CountsArray)
         CopyCountsArray.push({
@@ -32,12 +30,11 @@ class Counters extends React.Component {
         })
         this.setState({
             CountsArray: CopyCountsArray,
-            CreationDate: this.state.CreationDate
         })
         console.log(this.state.CountsArray)
     }
 
-    DeleteCount = (index) => {
+    DeleteCounter = (index) => {
         const CopyCountsArray = Object.assign([], this.state.CountsArray);
         CopyCountsArray.splice(index, 1);
         this.setState({
@@ -53,15 +50,13 @@ class Counters extends React.Component {
                     <div className="ScreenContainer">
                         <NavBar title="Counters" />
                         <div className="CountersContainer">
-                            <Button content="Add" className="ButtonDefault ButtonAdd" onClick={this.AddCount} />
+                            <Button content="Add" className="ButtonDefault ButtonAdd" onClick={this.AddCounter} />
                             {
                                 this.state.CountsArray.map((count, index) => {
                                     return (
                                         <Counter
-                                            key={count.id}
                                             id={count.id}
-                                            Delete={this.DeleteCount.bind(this, index)}
-                                            CreationDate={this.state.CreationDate}
+                                            Delete={this.DeleteCounter.bind(this, index)}
                                         />
                                     )
                                 })

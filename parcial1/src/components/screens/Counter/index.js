@@ -12,9 +12,8 @@ class Counter extends React.Component {
         super(props);
         var d = new Date();
         this.state = {
-            Count: 1,
-            LastUpdateDate: d.toLocaleString(),
-            CreationDate: props.CreationDate
+            Count: 0,
+            CreationDate: d.toLocaleString(),
         };
     }
 
@@ -22,7 +21,6 @@ class Counter extends React.Component {
         let NewValue = this.state.Count;
         this.setState({
             Count: (NewValue - 1),
-            LastUpdateDate: this.state.LastUpdateDate
         });
     }
 
@@ -30,7 +28,6 @@ class Counter extends React.Component {
         let NewValue = this.state.Count;
         this.setState({
             Count: (NewValue + 1),
-            LastUpdateDate: this.state.LastUpdateDate
         });
     }
 
@@ -39,7 +36,7 @@ class Counter extends React.Component {
             <div className="CounterContainer">
                 <div className="DateContainer">
                     <a className="Date DateBold">Creation Date:</a>
-                    <a className="Date">{this.props.CreationDate}</a>
+                    <a className="Date">{this.state.CreationDate}</a>
                 </div>
                 <div className="DateContainer">
                     <a className="Date DateBold">Last Update Date:</a>
