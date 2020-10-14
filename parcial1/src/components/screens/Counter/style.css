@@ -1,0 +1,36 @@
+.CounterContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #5c5c5c;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.Datecontainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.Date {
+    font-size: 16px;
+}
+
+.DateBold {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.Counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.CounterNumber {
+    font-weight: bold;
+    margin-right: 20px;
+    margin-left: 30px;
+}
