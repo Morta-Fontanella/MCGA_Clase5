@@ -7,3 +7,9 @@
     display: flex;
     flex-direction: column;
 }
+
+.CountersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

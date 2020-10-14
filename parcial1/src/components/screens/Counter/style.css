@@ -1,10 +1,11 @@
 .CounterContainer {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     background-color: #5c5c5c;
     border-radius: 6px;
     margin-top: 20px;
+    max-width: 40%;
 }
 
 .Datecontainer{
