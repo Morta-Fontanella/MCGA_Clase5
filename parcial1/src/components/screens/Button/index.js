@@ -8,7 +8,7 @@ class Button extends React.Component {
     render() {
         return (
             <Link to={this.props.link}>
-                <a className={this.props.className}>
+                <a className={this.props.className} onClick={this.props.onClick}>
                     {this.props.content}
                 </a>
             </Link>

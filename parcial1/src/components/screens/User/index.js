@@ -8,6 +8,7 @@ import "./style.css"
 import Counters from "../Counters";
 import Home from "../Home";
 import NavBar from "../NavBar";
+import EditUser from "../EditUser";
 
 class User extends React.Component {
     render() {
@@ -16,6 +17,9 @@ class User extends React.Component {
                 <Route exact path="/User">
                     <div className="ScreenContainer">
                         <NavBar title="User" />
+                        <div className="UserContainer">
+                            <EditUser />
+                        </div>
                     </div>
                 </Route>
                 <Route exact path="/Counters" component={Counters} />

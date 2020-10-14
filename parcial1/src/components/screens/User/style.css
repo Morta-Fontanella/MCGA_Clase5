@@ -7,3 +7,9 @@
     display: flex;
     flex-direction: column;
 }
+
+.UserContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

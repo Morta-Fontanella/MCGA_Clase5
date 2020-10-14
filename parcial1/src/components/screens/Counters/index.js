@@ -12,6 +12,40 @@ import Button from "../Button"
 import Counter from "../Counter";
 
 class Counters extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.countID = 0;
+        var d = new Date();
+        this.state = {
+            CountsArray: [],
+            id: "",
+            CreationDate: d.toLocaleString(),
+        }
+    }
+
+    AddCount = () => {
+        this.countID = this.countID + 1;
+        const CopyCountsArray = Object.assign([], this.state.CountsArray)
+        CopyCountsArray.push({
+            id: this.countID
+        })
+        this.setState({
+            CountsArray: CopyCountsArray,
+            CreationDate: this.state.CreationDate
+        })
+        console.log(this.state.CountsArray)
+    }
+
+    DeleteCount = (index) => {
+        const CopyCountsArray = Object.assign([], this.state.CountsArray);
+        CopyCountsArray.splice(index, 1);
+        this.setState({
+            CountsArray: CopyCountsArray
+        })
+    }
+
+
     render() {
         return (
             <BrowserRouter>
@@ -19,11 +53,19 @@ class Counters extends React.Component {
                     <div className="ScreenContainer">
                         <NavBar title="Counters" />
                         <div className="CountersContainer">
-                            <Button content="Add" className="ButtonDefault ButtonAdd" />
-                            <Counter />
-                            <Counter />
-                            <Counter />
-                            <Counter />
+                            <Button content="Add" className="ButtonDefault ButtonAdd" onClick={this.AddCount} />
+                            {
+                                this.state.CountsArray.map((count, index) => {
+                                    return (
+                                        <Counter
+                                            key={count.id}
+                                            id={count.id}
+                                            Delete={this.DeleteCount.bind(this, index)}
+                                            CreationDate={this.state.CreationDate}
+                                        />
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </Route>
