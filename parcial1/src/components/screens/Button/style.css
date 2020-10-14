@@ -12,3 +12,7 @@
 .ButtonDefault:hover{
     background: #f7f7f7;
 }
+
+a {
+    text-decoration: none;
+}

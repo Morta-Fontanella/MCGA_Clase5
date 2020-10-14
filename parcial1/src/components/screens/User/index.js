@@ -1,19 +1,26 @@
 import React from "react";
-import { BrowserRouter, Link, Route} from 'react-router-dom';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 
 //Css
 import "./style.css"
 
 //Components
-
+import Counters from "../Counters";
+import Home from "../Home";
+import NavBar from "../NavBar";
 
 class User extends React.Component {
     render() {
         return (
-            <Route exact path="/User">
-                <h1>User</h1>
-            </Route>
-
+            <BrowserRouter>
+                <Route exact path="/User">
+                    <div className="ScreenContainer">
+                        <NavBar title="User" />
+                    </div>
+                </Route>
+                <Route exact path="/Counters" component={Counters} />
+                <Route exact path="/" component={Home} />
+            </BrowserRouter>
         );
     }
 }

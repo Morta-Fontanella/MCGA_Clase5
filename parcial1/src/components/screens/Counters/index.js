@@ -5,14 +5,22 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import "./style.css"
 
 //Components
-import Counter from "../Counter";
+import User from "../User";
+import Home from "../Home";
+import NavBar from "../NavBar";
 
 class Counters extends React.Component {
     render() {
         return (
-            <Route exact path="/Counters">
-                <h1>counters</h1>
-            </Route>
+            <BrowserRouter>
+                <Route exact path="/Counters">
+                    <div className="ScreenContainer">
+                        <NavBar title="Counters" />
+                    </div>
+                </Route>
+                <Route exact path="/User" component={User} />
+                <Route exact path="/" component={Home} />
+            </BrowserRouter>
         );
     }
 }
