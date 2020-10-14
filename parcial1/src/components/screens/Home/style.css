@@ -9,7 +9,7 @@ body {
     color: #FFFFFF;
 }
 
-.container{
+.Container{
     display: flex;
     flex-direction: column;
     text-align: center;
